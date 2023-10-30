@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carbon Footprint Calculator</title>
+    <style> body{
+        background-color: aqua;
+        text-align: center;
+
+    }
+    button{
+        padding: 5px;
+        border-radius: 7px;
+        background-color: orange;
+        font-size: medium;
+
+    }
+    header{
+        background-color: bisque;
+        padding: 4px;
+        margin-bottom: 5px;
+        color: rgb(214, 13, 80);
+        text-decoration: underline;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: large;
+
+    }
+    label{
+        font-size: large;
+        font-weight: bold;
+
+    }
+</style>
+</head>
+<body>
+    <header>
+       <h1 class="head"> Carbon Footprint Calculator </h1>
+    </header>
+    
+    <label for="miles">Miles driven per year: </label>
+    <input type="number" placeholder="Enter number to calculate" id="miles">
+    <br><br>
+
+    <label for="oxy">Average MPG of your vehicle : </label>
+    <input type="number" name="mpg" id="oxy" placeholder="Enter number to calculate">
+    <br><br>
+    <p id="displayOutput"></p>
+    <button onclick="calculateButton()" type="submit">Calculate</button>
+
+
+    <script >
+        function calculateButton(){
+            const first = document.getElementById("miles").value;
+            const second = document.getElementById("oxy").value;
+            const result = (first/second)*19.8  
+            document.getElementById("displayOutput").textContent = `Your estimated annual carbon footprint is  ${result} pounds of Co2`;     
+            
+        }
+
+    </script>
+
+</body>
+</html>
